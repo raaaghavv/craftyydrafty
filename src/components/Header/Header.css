@@ -1,14 +1,15 @@
-:root{
+:root {
 }
 .cta-banner {
-    background-color: #655f5f;
-  display: block;
-  text-align: center;
+  background-color: #655f5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid white;
+  height: 4vh;
   border-radius: 13px;
   margin-bottom: 1vh;
   margin-inline: 1vw;
-
 }
 /* .cta-banner {
     display: block; 
@@ -26,52 +27,51 @@
     background: linear-gradient(to right, #e55e5e, #ff9060);
   } */
 .navbar {
-    border: 1px solid white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 10vh;
+  height: 8vh;
   margin-inline: 1vw;
 }
-.logo{
-    height: 100%;
+.logo {
+  height: 100%;
 }
 .logo a {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-right: 1px solid rgb(239, 230, 230);
-    width: 12rem;
-    height: 100%;
-    padding-inline: 0.5vw;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-right: 1px solid rgb(239, 230, 230);
+  width: 12rem;
+  height: 100%;
+  padding-inline: 0.5vw;
 }
 .logo img {
-    height: 8vh;
+  height: 8vh;
 }
 nav {
-    height: 100%;
-    /* width: 40vw; */
+  height: 100%;
+  /* width: 40vw; */
 }
-.navbar a{
-    /* display: flex; */
-    /* height:100%; */
+.navbar a {
+  /* display: flex; */
+  /* height:100%; */
 }
 .nav-links {
-    display: flex;
-    /* justify-content: space-between; */
-    list-style: none;
-    height: 100%;
-    margin: 0%;
+  display: flex;
+  /* justify-content: space-between; */
+  list-style: none;
+  height: 100%;
+  margin: 0%;
 }
-.nav-links li a{
-    display: flex;
-    align-items: center;
-    border-left: 1px solid rgb(239, 230, 230);
-    text-decoration: none;
-    height: 100%;
-    /* font-size: 1.3rem; */
-    color: rgb(230, 223, 223);
-    padding-inline: 1vw;
+.nav-links li a {
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgb(239, 230, 230);
+  text-decoration: none;
+  height: 100%;
+  /* font-size: 1.3rem; */
+  color: rgb(230, 223, 223);
+  padding-inline: 1vw;
 }
