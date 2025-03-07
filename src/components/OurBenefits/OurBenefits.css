@@ -1,0 +1,50 @@
+.section-heading {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.section-heading h2 {
+  font-size: 2.5vmax;
+}
+
+.Benefits-cards-container {
+  margin-inline: 2vw;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 3fr));
+  gap: 2vw;
+  /* flex-wrap: wrap; */
+}
+
+.Benefits-card .icon-box {
+  display: inline;
+  position: absolute;
+  top: -25px;
+  left: 25px;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 2%;
+  background-color: #fff;
+}
+
+.Benefits-card {
+  /* height: 15vmax; */
+  /* width: 20vmax; */
+  border: 2px solid;
+  border-radius: 13px;
+  position: relative;
+  overflow: visible;
+  padding: 4%;
+  padding-bottom: 7%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px;
+}
+
+.Benefits-card h3 {
+  font-size: 1.6rem;
+}
+
+.Benefits-card p {
+  font-size: 1rem;
+}
