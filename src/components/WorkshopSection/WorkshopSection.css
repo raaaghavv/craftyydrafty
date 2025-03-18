@@ -1,0 +1,144 @@
+.workshop-filter-nav {
+  height: 8vh;
+  width: max-content;
+  margin-top: 3.5%;
+  margin-inline: auto;
+  padding: 0%;
+}
+
+.workshop-filter-nav ul {
+  display: flex;
+  height: 100%;
+  list-style: none;
+  padding: 0%;
+  margin: 0%;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+.workshop-filter-nav li {
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.workshop-filter-nav li:not(:last-child) {
+  border-right: 2px solid rgb(230, 223, 223);
+}
+
+.workshop-filter-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 100%;
+  color: rgb(230, 223, 223);
+  padding-inline: 1vw;
+  margin: 0%;
+  /* font-size: 1rem; */
+}
+
+.slider-container {
+  display: flex;
+  margin-inline: auto;
+  margin-top: 2.5%;
+  width: 83vw;
+  overflow-x: hidden;
+}
+
+.slider-wrapper {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  /* padding-left: 2rem; */
+  /* padding: 0%; */
+  padding: 6px;
+}
+
+.card-item {
+  flex: 0 0 calc((100% / 3) - 1rem); /* Each card takes 1/3rd of the container */
+  max-width: calc((100% / 3)); /* Prevents overflow */
+}
+
+.card-link {
+  text-decoration: none;
+  color: rgb(230, 223, 223);
+  display: inline-block;
+}
+
+.card {
+  border: 2px solid rgb(230, 223, 223);
+  border-radius: 10px;
+  width: 25vw;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  display: block;
+  max-width: 95%;
+  height: auto;
+  margin-inline: auto;
+  margin-top: 2.5%;
+  border-radius: 10px;
+}
+
+.card-text-container {
+  display: block;
+  max-width: 95%;
+  margin-inline: auto;
+}
+
+.card .learn-more {
+  display: block;
+  text-align: center;
+  margin-inline: auto;
+  margin-bottom: 3%;
+  text-decoration: none;
+  padding: 2%;
+  width: 90%;
+  border: 2px solid rgb(230, 223, 223);
+  border-radius: 10px;
+  color: rgb(230, 223, 223);
+  font-weight: bold;
+}
+
+.prev-btn,
+.next-btn {
+  margin: auto;
+  height: 5vh;
+}
+/* Hide scrollbar but keep scrolling functional */
+.slider-wrapper::-webkit-scrollbar {
+  height: 6px; /* Adjust height of scrollbar */
+}
+
+.slider-wrapper::-webkit-scrollbar-thumb {
+  background: #888; /* Color of scrollbar thumb */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.slider-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
+.slider-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of scrollbar track */
+  border-radius: 5px;
+}
+.slider-wrapper {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
