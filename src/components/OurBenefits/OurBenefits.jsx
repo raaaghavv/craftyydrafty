@@ -51,8 +51,8 @@ function OurBenefits() {
         </p>
       </div>
       <div className="Benefits-cards-container">
-        {cardData.map((card) => (
-          <div id={card.id} className="Benefits-card">
+        {cardData.map((card, index) => (
+          <div id={card.id} className="Benefits-card" key={index}>
             <div className="icon-box">{card.icon}</div>
             <h3>{card.heading}</h3>
             <p>{card.text}</p>
