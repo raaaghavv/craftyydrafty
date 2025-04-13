@@ -1,0 +1,79 @@
+.sliding-testimonials {
+  padding-inline: 5vw;
+}
+.marquee-container {
+  overflow: clip;
+  margin-top: 6vh;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.marquee-slider {
+  display: flex;
+  gap: 4.8rem;
+  padding-left: 4.8rem;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+.marquee-slider:hover {
+  animation-play-state: paused;
+}
+.testimonial-card {
+  border: 1px solid white;
+  border-radius: 8px;
+  width: 23vmax;
+  height: auto;
+  padding: 0.1% 0.5% 0.5% 0.5%;
+  margin: 0%;
+}
+.top-decor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quote-icon {
+  overflow: visible;
+  width: 18%;
+  height: auto;
+  padding: 0%;
+  margin: 0%;
+}
+.star-rating {
+  text-align: end;
+}
+.star-rating svg {
+  display: inline-flex;
+  width: 10%;
+  height: auto;
+}
+.author-info {
+  display: flex;
+  gap: 8px;
+}
+.author-profile {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border-radius: 100%;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 2rem;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 0.5%;
+}
+.author-info span {
+  display: block;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
