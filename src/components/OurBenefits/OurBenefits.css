@@ -2,9 +2,16 @@
   margin-inline: 2vw;
   padding: 2%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
   gap: 2vw;
   /* flex-wrap: wrap; */
+}
+
+@media (width>1300px) {
+  .Benefits-cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 3fr));
+    padding-inline: 5%;
+  }
 }
 
 .Benefits-card .icon-box {
@@ -25,8 +32,8 @@
   border-radius: 13px;
   position: relative;
   overflow: visible;
-  padding: 4%;
-  padding-bottom: 7%;
+  padding: 3%;
+  /* padding-bottom: 7%; */
   margin-top: 15px;
   margin-bottom: 15px;
   box-shadow: 5px 5px;
@@ -38,4 +45,10 @@
 
 .Benefits-card p {
   font-size: 1rem;
+}
+
+@media (width>=768px) {
+  .Benefits-card {
+    padding: 4%;
+  }
 }

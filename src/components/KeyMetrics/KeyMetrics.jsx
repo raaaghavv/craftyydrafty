@@ -9,8 +9,8 @@ function KeyMetrics() {
         <dd class="metric-label">Happy Students</dd>
       </div>
       <div class="metric-item">
-        <dt class="metric-value">98%</dt>
-        <dd class="metric-label">Satisfaction Rate</dd>
+        <dt class="metric-value">25+</dt>
+        <dd class="metric-label">Years Spent on Craft</dd>
       </div>
       <div class="metric-item">
         <dt class="metric-value">1K+</dt>

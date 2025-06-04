@@ -99,14 +99,14 @@ function WorkshopSection() {
   const scrollLeft = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft -=
-        (sliderRef.current.children[0].offsetWidth + 24) * 3;
+        (sliderRef.current.children[0].offsetWidth + 24) * 2;
     }
   };
 
   const scrollRight = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft +=
-        (sliderRef.current.children[0].offsetWidth + 24) * 3;
+        (sliderRef.current.children[0].offsetWidth + 24) * 2;
     }
   };
   return (

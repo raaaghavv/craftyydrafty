@@ -1,4 +1,10 @@
-:root {
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgb(36, 36, 36);
+  padding-top: 1vh;
 }
 .cta-banner {
   background-color: #655f5f;
@@ -6,10 +12,19 @@
   align-items: center;
   justify-content: center;
   border: 1px solid white;
-  height: 4vh;
+  height: auto;
   border-radius: 13px;
-  margin-bottom: 1vh;
-  margin-inline: 1vw;
+  margin-bottom: 7px;
+  margin-inline: 10px;
+  padding: 1.1vw;
+}
+@media (width>=1024px) {
+  .cta-banner {
+    padding: 10px;
+  }
+}
+.cta-banner p {
+  margin: 0;
 }
 /* .cta-banner {
     display: block; 
@@ -33,7 +48,7 @@
   align-items: center;
   justify-content: space-between;
   height: 8vh;
-  margin-inline: 1vw;
+  margin-inline: 10px;
 }
 .logo {
   height: 100%;
@@ -41,22 +56,29 @@
 .logo a {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   border-right: 1px solid rgb(239, 230, 230);
-  width: 12rem;
+  width: 11rem;
   height: 100%;
-  padding-inline: 0.5vw;
+  /* padding-inline: 0.5vw; */
+  /* padding-inline: 5%; */
+  gap: 5px;
 }
 .logo img {
-  height: 8vh;
+  height: 90%;
 }
-nav {
+.hamburger {
+  height: 100%;
+  display: none;
+  border-left: 1px solid rgb(239, 230, 230);
+  padding-inline: 7px;
+}
+.hamburger svg {
+  height: 70%;
+}
+.front-nav {
   height: 100%;
   /* width: 40vw; */
-}
-.navbar a {
-  /* display: flex; */
-  /* height:100%; */
 }
 .nav-links {
   display: flex;
@@ -65,13 +87,53 @@ nav {
   height: 100%;
   margin: 0%;
 }
-.nav-links li a {
+.nav-links li {
+  border-left: 1px solid rgb(239, 230, 230);
+}
+
+.nav-links a {
   display: flex;
   align-items: center;
-  border-left: 1px solid rgb(239, 230, 230);
   text-decoration: none;
   height: 100%;
-  /* font-size: 1.3rem; */
   color: rgb(230, 223, 223);
   padding-inline: 1vw;
+  font-size: 1rem;
+}
+#side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgb(126, 126, 126);
+  height: 100vh;
+  width: 250px;
+  transform: translateX(100%);
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+  font-size: 1.2rem;
+  padding-inline: 10px;
+}
+#side-nav.side-nav-open {
+  transform: translateX(0);
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.sidebar:not(first-child) {
+  /* gap: 5px; */
+}
+.close-slidebar-icon {
+  height: 3rem;
+}
+@media (width<768px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+  .front-nav {
+    display: none;
+  }
 }

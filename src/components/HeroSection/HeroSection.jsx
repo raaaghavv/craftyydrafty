@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./HeroSection.css";
+import Header from "../Header/Header";
 
 function HeroSection() {
+  useEffect(() => {
+    if (Header) {
+      const header = document.getElementById("header");
+      const style = window.getComputedStyle(header);
+      const marginTop = parseFloat(style.marginTop);
+      const marginBottom = parseFloat(style.marginBottom);
+      const heroSection = document.getElementById("hero-section");
+      heroSection.style.setProperty(
+        "margin-top",
+        `${header.offsetHeight + marginTop + marginBottom}px`
+      );
+    }
+  });
+
   return (
     <>
-      <section className="hero-section">
+      <section id="hero-section">
         <div className="container">
           <div className="typography">
             <h1>

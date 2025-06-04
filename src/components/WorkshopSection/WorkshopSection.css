@@ -1,9 +1,9 @@
 .workshop-filter-nav {
   height: 8vh;
-  width: max-content;
-  margin-top: 3.5%;
+  width: fit-content;
+  margin-top: 25px;
   margin-inline: auto;
-  padding: 0%;
+  padding-inline: 35px;
 }
 
 .workshop-filter-nav ul {
@@ -14,6 +14,8 @@
   margin: 0%;
   border: 2px solid;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .workshop-filter-nav li {
@@ -29,20 +31,20 @@
 .workshop-filter-nav a {
   display: flex;
   align-items: center;
-  justify-content: center;
+  text-align: center;
   text-decoration: none;
   height: 100%;
   color: rgb(230, 223, 223);
-  padding-inline: 1vw;
+  padding-inline: 1vmax;
   margin: 0%;
   /* font-size: 1rem; */
 }
 
 .slider-container {
   display: flex;
-  margin-inline: auto;
-  margin-top: 2.5%;
-  width: 83vw;
+  margin-inline: 10vw;
+  margin-top: 30px;
+  /* width: 83vw; */
   overflow-x: hidden;
 }
 
@@ -56,12 +58,12 @@
   scroll-behavior: smooth;
   /* padding-left: 2rem; */
   /* padding: 0%; */
-  padding: 6px;
+  padding: 6px 0 6px 0;
 }
 
 .card-item {
-  flex: 0 0 calc((100% / 3) - 1rem); /* Each card takes 1/3rd of the container */
-  max-width: calc((100% / 3)); /* Prevents overflow */
+  /* flex: 0 0 calc((100% / 3) - 1rem); Each card takes 1/3rd of the container */
+  /* max-width: calc((100% / 3)); Prevents overflow */
 }
 
 .card-link {
@@ -71,11 +73,15 @@
 }
 
 .card {
+  flex: 0 0 auto;
+  width: clamp(200px, 70vw, 300px); /* or whatever responsive range you want */
+  min-width: 200px; /* ensure it never goes below this */
+  max-width: 300px; /* optional cap */
   border: 2px solid rgb(230, 223, 223);
   border-radius: 10px;
-  width: 25vw;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  /* min-width: 250px; */
 }
 
 .card:hover {
@@ -114,6 +120,7 @@
 .prev-btn,
 .next-btn {
   margin: auto;
+  margin-inline: 5px;
   height: 5vh;
 }
 /* Hide scrollbar but keep scrolling functional */
@@ -141,4 +148,16 @@
 
 .slider-wrapper::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
+}
+
+@media (hover: none) {
+  .prev-btn,
+  .next-btn {
+    display: none;
+  }
+}
+@media (width>1024px) {
+  .card {
+    flex: 0 0 clamp(250px, 300px, 350px);
+  }
 }
