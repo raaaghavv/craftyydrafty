@@ -58,7 +58,7 @@
   scroll-behavior: smooth;
   /* padding-left: 2rem; */
   /* padding: 0%; */
-  padding: 6px 0 6px 0;
+  padding: 6px ;
 }
 
 .card-item {
@@ -160,4 +160,28 @@
   .card {
     flex: 0 0 clamp(250px, 300px, 350px);
   }
+}
+
+
+.slider-indicator {
+  width: 10vmax;
+  max-width: 100px;
+  height: 6px;
+  background-color: #555;
+  border-radius: 3px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-inline: auto;
+}
+
+.slider-pill {
+  height: 100%;
+  width: 20%;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  transition: left 0.3s ease;
+  transform: translateX(0); 
 }

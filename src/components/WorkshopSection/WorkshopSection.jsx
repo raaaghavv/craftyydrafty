@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+// import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
+
 import "./WorkshopSection.css";
 
 const workshopCardList = [
@@ -109,6 +111,42 @@ function WorkshopSection() {
         (sliderRef.current.children[0].offsetWidth + 24) * 2;
     }
   };
+  const pillRef = useRef(null);
+
+  const updatePillPosition = () => {
+    const slider = sliderRef.current;
+    const pill = pillRef.current;
+  
+    if (slider && pill) {
+      const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+      const scrollRatio = slider.scrollLeft / maxScrollLeft;
+  
+      // Use actual pill width to constrain movement
+      const pillWidthPercent = 20; // same as CSS width: 20%
+      const maxLeft = 100 - pillWidthPercent;
+      const leftPercent = scrollRatio * maxLeft;
+  
+      pill.style.left = `${leftPercent}%`;
+      pill.style.transform = "translateX(0)"; // no shift needed now
+    }
+  };
+  
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    slider.addEventListener("scroll", updatePillPosition);
+    window.addEventListener("resize", updatePillPosition); // responsive
+
+    // Set initial position
+    updatePillPosition();
+
+    return () => {
+      slider.removeEventListener("scroll", updatePillPosition);
+      window.removeEventListener("resize", updatePillPosition);
+    };
+  }, []);
   return (
     <section className="Workshop-section">
       <div className="section-heading">
@@ -161,6 +199,9 @@ function WorkshopSection() {
         <button className="next-btn" onClick={scrollRight}>
           &gt;
         </button>
+      </div>
+      <div className="slider-indicator">
+        <div className="slider-pill" ref={pillRef} />
       </div>
     </section>
   );
