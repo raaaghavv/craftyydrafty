@@ -7,9 +7,6 @@ function SlidingTestimonials() {
       rating: "4",
       authorName: "raghav goel",
       authorState: "Amritsar",
-      getAuthorInitial() {
-        return this.authorName.charAt(0).toUpperCase();
-      },
       ariaHidden: false,
     },
     {
@@ -18,9 +15,6 @@ function SlidingTestimonials() {
       rating: "5",
       authorName: "Sarah Johnson",
       authorState: "Amritsar",
-      getAuthorInitial() {
-        return this.authorName.charAt(0).toUpperCase();
-      },
       ariaHidden: false,
     },
     {
@@ -29,9 +23,6 @@ function SlidingTestimonials() {
       rating: "5",
       authorName: "Sarah Johnson",
       authorState: "Amritsar",
-      getAuthorInitial() {
-        return this.authorName.charAt(0).toUpperCase();
-      },
       ariaHidden: false,
     },
     {
@@ -40,9 +31,6 @@ function SlidingTestimonials() {
       rating: "4",
       authorName: "raghav goel",
       authorState: "Amritsar",
-      getAuthorInitial() {
-        return this.authorName.charAt(0).toUpperCase();
-      },
       ariaHidden: true,
     },
     {
@@ -51,9 +39,6 @@ function SlidingTestimonials() {
       rating: "5",
       authorName: "Sarah Johnson",
       authorState: "Amritsar",
-      getAuthorInitial() {
-        return this.authorName.charAt(0).toUpperCase();
-      },
       ariaHidden: true,
     },
     {
@@ -62,12 +47,13 @@ function SlidingTestimonials() {
       rating: "5",
       authorName: "Sarah Johnson",
       authorState: "Amritsar",
-      getAuthorInitial() {
-        return this.authorName.charAt(0).toUpperCase();
-      },
       ariaHidden: true,
     },
   ];
+  
+  const getAuthorInitial = (testimonial) =>
+    testimonial.authorName.charAt(0).toUpperCase();
+
   return (
     <section className="sliding-testimonials">
       <div className="section-heading">
@@ -197,7 +183,7 @@ function SlidingTestimonials() {
               <p className="quote-text">{testimonial.quote}</p>
               <cite className="author-info">
                 <span className="author-profile">
-                  {testimonial.getAuthorInitial()}
+                  {getAuthorInitial(testimonial)}
                 </span>
                 <div>
                   <span className="author-name">{testimonial.authorName}</span>
