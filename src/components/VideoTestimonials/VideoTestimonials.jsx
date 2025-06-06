@@ -18,6 +18,8 @@ function VideoTestimonials() {
       responsive: true,
       fluid: true,
       aspectRatio: "9:16",
+      name: "john",
+      state: "punjab",
     },
     {
       sources: [
@@ -30,6 +32,8 @@ function VideoTestimonials() {
       responsive: true,
       fluid: true,
       aspectRatio: "9:16",
+      name: "john",
+      state: "punjab",
     },
     {
       sources: [
@@ -42,6 +46,8 @@ function VideoTestimonials() {
       responsive: true,
       fluid: true,
       aspectRatio: "9:16",
+      name: "john",
+      state: "punjab",
     },
   ];
 
@@ -68,7 +74,7 @@ function VideoTestimonials() {
         </p>
       </div>
       <div className="video-grid">
-        {videos.map((videoJsOptions, index) => (
+        {videos.map(({ name, state, ...videoJsOptions }, index) => (
           <div className="video-card" key={index}>
             <VideoJS
               options={videoJsOptions}
@@ -76,8 +82,8 @@ function VideoTestimonials() {
               className="video-js"
             />
             <div className="customer-info">
-              <p className="customer-name">John Doe</p>
-              <p className="customer-state">Punjab</p>
+              <p className="customer-name">{name}</p>
+              <p className="customer-state">{state}</p>
             </div>
           </div>
         ))}
