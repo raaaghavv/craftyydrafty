@@ -15,8 +15,8 @@
 
 .marquee-slider {
   display: flex;
-  gap: 4.8rem;
-  padding-left: 4.8rem;
+  gap: clamp(1.2rem, 5vw, 4.8rem);
+  padding-left: clamp(1.2rem, 5vw, 4.8rem);
   width: max-content;
   animation: marquee 15s linear infinite;
 }
