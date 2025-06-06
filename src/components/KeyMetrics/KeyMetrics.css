@@ -2,47 +2,13 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 8vh;
 }
-@media (width > 550px) {
-  .metrics-grid {
-    margin: 8vh 15vw;
-    grid-template-columns: repeat(3, 1fr);
-    position: relative;
-  }
-  .metrics-grid::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 8%;
-    right: 8%;
-    height: 1px; /* Border thickness */
-    background: linear-gradient(
-      90deg,
-      rgb(36, 36, 36) 0%,
-      rgb(120, 120, 120) 50%,
-      rgb(36, 36, 36) 100%
-    );
-  }
-  .metric-item {
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-  }
-  .metric-item:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 10%;
-    right: 0;
-    bottom: 10%;
-    width: 1px; /* Border thickness */
-    background: linear-gradient(
-      rgb(36, 36, 36) 0%,
-      rgb(120, 120, 120) 50%,
-      rgb(36, 36, 36) 100%
-    );
-  }
+
+.metric-item {
+  position: relative;
 }
 
 .metric-value {
@@ -64,4 +30,57 @@
   margin-top: 0.5rem;
   margin-left: 0%;
   color: rgb(180, 180, 180);
+}
+
+@media (width < 600px) {
+  .metric-item:not(:first-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0%;
+    right: 0%;
+    height: 1px;
+    background: linear-gradient(
+      rgb(36, 36, 36) 0%,
+      rgb(120, 120, 120) 50%,
+      rgb(36, 36, 36) 100%
+    );
+  }
+}
+@media (width >= 600px) {
+  .metrics-grid {
+    margin: 8vh 15vw;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+  }
+  .metrics-grid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 1px; /* Border thickness */
+    background: linear-gradient(
+      90deg,
+      rgb(36, 36, 36) 0%,
+      rgb(120, 120, 120) 50%,
+      rgb(36, 36, 36) 100%
+    );
+  }
+  .metric-item {
+    padding: 1rem;
+  }
+  .metric-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    bottom: 10%;
+    width: 1px; /* Border thickness */
+    background: linear-gradient(
+      rgb(36, 36, 36) 0%,
+      rgb(120, 120, 120) 50%,
+      rgb(36, 36, 36) 100%
+    );
+  }
 }
