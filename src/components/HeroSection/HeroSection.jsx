@@ -4,29 +4,34 @@ import Header from "../Header/Header";
 
 function HeroSection() {
   useEffect(() => {
-    if (Header) {
+    const updateHeroOffset = () => {
       const header = document.getElementById("header");
-      const style = window.getComputedStyle(header);
-      const marginTop = parseFloat(style.marginTop);
-      const marginBottom = parseFloat(style.marginBottom);
       const heroSection = document.getElementById("hero-section");
-      heroSection.style.setProperty(
-        "margin-top",
-        `${header.offsetHeight + marginTop + marginBottom}px`
-      );
-    }
-  });
+
+      if (Header && HeroSection) {
+        const style = window.getComputedStyle(header);
+        const marginTop = parseFloat(style.marginTop) || 0;
+        const marginBottom = parseFloat(style.marginBottom) || 0;
+        const totalOffset = header.offsetHeight + marginTop + marginBottom;
+        heroSection.style.setProperty("--marginTop", `${totalOffset}px`);
+      }
+    };
+
+    updateHeroOffset();
+    window.addEventListener("resize", updateHeroOffset);
+    return () => window.removeEventListener("resize", updateHeroOffset);
+  }, []);
 
   return (
     <>
       <section id="hero-section">
-        <div className="container">
+        <div className="left-text-container">
           <div className="typography">
             <h1>
               EVERY GIFT <br />
               TELLS A<br /> STORY—
               <br /> MAKE YOURS <br />
-              unforgettable.
+              <span className="signature-font"> unforgettable .</span>
             </h1>
           </div>
           <p>Learn the art of packaging or let us handle it for you!</p>

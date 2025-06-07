@@ -1,46 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
 :root {
-  /* --marginTop: 14vh; */
+  --marginTop: 80px;
 }
+
 #hero-section {
   display: flex;
-  height: 84.6vh;
-  padding-inline: 1vw;
+  height: calc(100vh - var(--marginTop));
   margin-top: var(--marginTop);
-  justify-content: space-evenly;
+  padding: 0 2rem;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
+  overflow: hidden;
 }
 
-/* .container {
-  width: 40vw;
-} */
-
-.typography {
-  font-size: 2.3vmax;
+.left-text-container,
+.image-container {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.container p {
-  font-size: 1.3vmax;
+.typography h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.signature-font {
+  display: block;
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  text-align: center;
+  margin-right: 0.5em;
+  transform: rotate(-2deg);
+}
+
+.left-text-container p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.6;
+  margin-block: 1.5rem;
+  max-width: 50ch;
 }
 
 .cta-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-inline: 1vw;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.container button {
-  font-size: 1vmax;
-  padding: 5%;
-  border: 2px solid;
+.left-text-container button {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  padding: 0.8em 1.5em;
+  border: 2px solid black;
   border-radius: 13px;
-  margin-top: 1vh;
+  background-color: transparent;
+  cursor: pointer;
+  flex-grow: 1;
+  transition: all 0.3s ease;
 }
 
-.image-container {
-  width: 32vmax;
-  /* object-fit: ; */
+.left-text-container button:hover {
+  background-color: black;
+  color: white;
 }
 
 .image-container img {
   width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  #hero-section {
+    flex-direction: column-reverse;
+    height: auto;
+    min-height: calc(100vh - var(--header-height));
+    text-align: center;
+    padding: 0.5rem 1rem 0;
+  }
+
+  .left-text-container {
+    align-items: center;
+  }
+
+  .left-text-container p {
+    max-width: 100%;
+  }
+
+  .signature-font {
+    margin-right: 0;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .left-text-container button {
+    width: 100%;
+    max-width: 300px;
+  }
 }
