@@ -1,16 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --absolute-white: #fff;
+  --absolute-black: #000;
+
+  --orange-65: #ff8d4c;
+  --orange-70: #ff9e66;
+  --orange-75: #ffae80;
+  --orange-80: #ffbe99;
+  --orange-90: #ffdecc;
+  --orange-95: #ffefe5;
+  --orange-97: #fffcfa;
+  --orange-99: #fffcfa;
+
+  --grey-10: #191919;
+  --grey-15: #262626;
+  --grey-20: #333333;
+  --grey-30: #4c4c4d;
+  --grey-35: #59595a;
+  --grey-40: #656567;
+  --grey-60: #98989a;
+  --grey-70: #b3b3b3;
+
+  --content-font: "Outfit", Arial, sans-serif;
+  --heading-font: "Raleway", Arial, sans-serif;
+  --signature-font: "Dancing Script", Arial, sans-serif;
+
+  font-family: var(--content-font);
   /* line-height: 1.5;
   font-weight: 400; */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color-scheme: light dark; */
+  background-color: var(--orange-97);
+  color: var(--grey-10);
 }
 body,
 html {
   margin: 0;
-  margin-inline: 1px;
+  /* margin-inline: 1px; */
   padding: 0px;
   overflow-x: hidden;
 }

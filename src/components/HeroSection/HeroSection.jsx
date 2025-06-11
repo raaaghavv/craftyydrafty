@@ -30,8 +30,11 @@ function HeroSection() {
             <h1>
               EVERY GIFT <br />
               TELLS A<br /> STORY—
-              <br /> MAKE YOURS <br />
-              <span className="signature-font"> unforgettable .</span>
+              <br />
+              <span className="typography-split-color">
+                MAKE YOURS <br />
+                <span className="signature-font"> unforgettable .</span>
+              </span>
             </h1>
           </div>
           <p>Learn the art of packaging or let us handle it for you!</p>

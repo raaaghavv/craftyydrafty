@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
-
 :root {
   --marginTop: 80px;
 }
-
+.typography-split-color {
+  color: var(--orange-65);
+}
 #hero-section {
   display: flex;
   height: calc(100vh - var(--marginTop));
@@ -33,7 +33,7 @@
 
 .signature-font {
   display: block;
-  font-family: "Dancing Script", cursive;
+  font-family: var(--signature-font);
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -48,6 +48,7 @@
   line-height: 1.6;
   margin-block: 1.5rem;
   max-width: 50ch;
+  color: var(--grey-20);
 }
 
 .cta-buttons {
@@ -59,17 +60,19 @@
 .left-text-container button {
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   padding: 0.8em 1.5em;
-  border: 2px solid black;
+  border: 2px solid var(--grey-15);
   border-radius: 13px;
-  background-color: transparent;
+  background-color: var(--orange-95);
+  box-shadow: 5px 5px var(--orange-80);
   cursor: pointer;
   flex-grow: 1;
   transition: all 0.3s ease;
+  color: var(--grey-10);
 }
 
 .left-text-container button:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--orange-97);
+  box-shadow: 4.5px 4.5px var(--orange-90);
 }
 
 .image-container img {
@@ -84,7 +87,7 @@
     height: auto;
     min-height: calc(100vh - var(--header-height));
     text-align: center;
-    padding: 0.5rem 1rem 0;
+    padding: 0.5rem 1rem;
   }
 
   .left-text-container {
