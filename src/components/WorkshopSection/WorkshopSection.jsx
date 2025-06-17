@@ -184,7 +184,11 @@ const WorkshopSection = forwardRef((props, ref) => {
           {filteredWorkshops.length > 0 ? (
             filteredWorkshops.map((card, index) => (
               <li className="card-item" key={index}>
-                <a className="card-link">
+                <a
+                  href={`https://wa.me/+918920799458?text=Hi! I want to know more about your ${card.Name}`}
+                  target="_blank"
+                  className="card-link"
+                >
                   <div className="card">
                     <img src={card.PosterSrc} alt={card.PosterAlt} />
                     <div className="card-text-container">
@@ -194,14 +198,7 @@ const WorkshopSection = forwardRef((props, ref) => {
                         {card.discountedPrice} <del> {card.originalPrice}</del>
                       </p>
                     </div>
-                    <span className="learn-more">
-                      <a
-                        href={`https://wa.me/+918920799458?text=Hi! I want to know more about your ${card.Name}`}
-                        target="_blank"
-                      >
-                        Learn More &#8594;
-                      </a>
-                    </span>
+                    <span className="learn-more">Learn More &#8594;</span>
                   </div>
                 </a>
               </li>

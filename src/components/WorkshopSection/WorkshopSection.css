@@ -145,7 +145,7 @@
   color: var(--grey-15);
   font-weight: 470;
 }
-.card .learn-more a{
+.card .learn-more {
   display: block;
   text-align: center;
   margin-inline: auto;
