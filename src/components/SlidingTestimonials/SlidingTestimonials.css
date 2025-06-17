@@ -24,12 +24,14 @@
   animation-play-state: paused;
 }
 .testimonial-card {
-  border: 1px solid white;
+  border: 2px solid var(--grey-15);
   border-radius: 8px;
   width: 23vmax;
   height: auto;
   padding: 0.1% 0.5% 0.5% 0.5%;
   margin: 0%;
+  color: var(--grey-15);
+  background-color: var(--absolute-white);
 }
 .top-decor {
   display: flex;
@@ -56,9 +58,9 @@
   gap: 8px;
 }
 .author-profile {
-  border: 1px solid rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  color: black;
+  border: 1px solid var(--grey-10);
+  background-color: var(--orange-97);
+  color: var(--grey-20);
   border-radius: 100%;
   text-align: center;
   margin-top: auto;
@@ -76,4 +78,16 @@
   to {
     transform: translateX(-50%);
   }
+}
+
+@media (width<=768px) {
+  .marquee-container {
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0)
+  );
+}
 }

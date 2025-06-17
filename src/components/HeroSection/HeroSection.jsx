@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./HeroSection.css";
 import Header from "../Header/Header";
 
@@ -6,7 +7,7 @@ function HeroSection() {
   useEffect(() => {
     const updateHeroOffset = () => {
       const header = document.getElementById("header");
-      const heroSection = document.getElementById("hero-section");
+      const heroSection = document.getElementById("home");
 
       if (Header && HeroSection) {
         const style = window.getComputedStyle(header);
@@ -24,7 +25,7 @@ function HeroSection() {
 
   return (
     <>
-      <section id="hero-section">
+      <section id="home">
         <div className="left-text-container">
           <div className="typography">
             <h1>
@@ -39,14 +40,18 @@ function HeroSection() {
           </div>
           <p>Learn the art of packaging or let us handle it for you!</p>
           <div className="cta-buttons">
-            <button>Join a Workshop</button>
-            <button>Get a Custom Packing Quote</button>
+            <button>
+              <Link to="/#workshops">Join a Workshop</Link>
+            </button>
+            <button>
+            <Link to="/#services">
+              Get a Custom Packing Quote
+            </Link></button>
           </div>
         </div>
         <div className="image-container">
           <img
-            // src="src\assets\craftyydrafty_owner_pic.png"
-            src="src\assets\craftyydrafty_owner_pic-removebg-preview.png"
+            src="craftyydrafty_owner_pic-removebg-preview.png"
             alt="CraftyyDrafty's Founder"
           />
         </div>

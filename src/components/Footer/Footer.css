@@ -1,11 +1,11 @@
-#footer {
-  margin-top: 150px;
+#contact-info {
   order: 1;
 }
 .footer-content {
-  background-color: #666666;
-  border: 1px solid white;
-  border-radius: 8px;
+  background-color: var(--absolute-white);
+  border: 2px solid var(--grey-15);
+  box-shadow: 5px 5px var(--grey-15);
+  border-radius: 10px;
   padding: 1% 3%;
   margin-inline: 8vw;
 }
@@ -56,27 +56,38 @@
   width: max-content;
   gap: 5px;
   height: 100%;
+  font-style:normal;
 }
 .contact-text {
   display: inline-block;
-  /* font-size: 1.2rem; */
+  font-weight: 450;
 }
 .address-text {
   display: inline-block;
   margin: 0;
   margin-left: 5px;
+  font-weight: 450;
+}
+.nav-link {
+  font-weight: 450;
+  color: var(--grey-20);
+}
+.nav-heading {
+  font-weight: 500;
+  color: var(--grey-15);
 }
 .contact-info svg {
-  background-color: rgb(255, 255, 254);
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 8px;
-  width: 1.7rem;
-  height: 1.7rem;
-  padding: 3px;
+  background-color: var(--orange-97);
+  border: 2px solid var(--grey-15);
+  border-radius: 5px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 5px;
 }
 .copyright-notice {
   width: 100%;
   text-align: end;
+  color: var(--grey-40);
 }
 .company-name-typography {
   display: flex;
@@ -95,9 +106,11 @@
   line-height: 0.7;
   white-space: nowrap;
   margin: 0;
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  color: var(--orange-70);
 }
-ul {
+.contact-list,
+.nav-list {
   list-style: none;
   margin: 0%;
   padding: 0%;
@@ -105,7 +118,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: var(--grey-15);
 }
 
 .visually-hidden {
@@ -118,4 +131,10 @@ a {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+@media (width>1025px) {
+  #contact-info {
+    margin-top: 150px;
+  }
 }

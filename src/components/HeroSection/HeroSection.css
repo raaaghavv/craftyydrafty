@@ -4,7 +4,7 @@
 .typography-split-color {
   color: var(--orange-65);
 }
-#hero-section {
+#home {
   display: flex;
   height: calc(100vh - var(--marginTop));
   margin-top: var(--marginTop);
@@ -26,16 +26,17 @@
 
 .typography h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 750;
   line-height: 1.2;
   margin: 0;
+  font-family: var(--heading-font);
 }
 
 .signature-font {
   display: block;
   font-family: var(--signature-font);
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 650;
   font-style: normal;
   text-align: center;
   margin-right: 0.5em;
@@ -44,7 +45,7 @@
 
 .left-text-container p {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.6;
   margin-block: 1.5rem;
   max-width: 50ch;
@@ -57,8 +58,10 @@
   flex-wrap: wrap;
 }
 
-.left-text-container button {
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+.cta-buttons button {
+  font-family: var(--content-font);
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  font-weight: 550;
   padding: 0.8em 1.5em;
   border: 2px solid var(--grey-15);
   border-radius: 13px;
@@ -82,7 +85,7 @@
 }
 
 @media (max-width: 768px) {
-  #hero-section {
+  #home {
     flex-direction: column-reverse;
     height: auto;
     min-height: calc(100vh - var(--header-height));

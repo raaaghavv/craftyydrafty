@@ -19,16 +19,16 @@
   position: absolute;
   top: -25px;
   left: 25px;
-  border: 2px solid;
+  border: 2px solid var(--grey-15);
   border-radius: 8px;
   padding: 2%;
-  background-color: #fff;
+  background-color: var(--orange-90);
 }
 
 .Benefits-card {
   /* height: 15vmax; */
   /* width: 20vmax; */
-  border: 2px solid;
+  border: 2px solid var(--grey-15);
   border-radius: 13px;
   position: relative;
   overflow: visible;
@@ -37,14 +37,18 @@
   margin-top: 15px;
   margin-bottom: 15px;
   box-shadow: 5px 5px;
+  background-color: var(--absolute-white);
 }
 
 .Benefits-card h3 {
+  font-family: var(--heading-font);
   font-size: 1.6rem;
+  color: var(--grey-10);
 }
 
 .Benefits-card p {
   font-size: 1rem;
+  color: var(--grey-30);
 }
 
 @media (width>=768px) {

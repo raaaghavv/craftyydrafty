@@ -1,49 +1,106 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+  const [isSideNavOpen, set_isSideNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (isSideNavOpen) {
+      document.documentElement.classList.add("prevent-scroll");
+    } else {
+      document.documentElement.classList.remove("prevent-scroll");
+    }
+    return () => {
+      document.documentElement.classList.remove("prevent-scroll");
+    };
+  }, [isSideNavOpen]);
+
   function toggleSidebar() {
-    document.getElementById("side-nav").classList.toggle("side-nav-open");
-    document.body.classList.toggle("sidebar-active");
-    document.documentElement.classList.toggle("prevent-scroll");
+    set_isSideNavOpen(!isSideNavOpen);
   }
+
+  document.getElementById;
+
+  const location = useLocation(); // Get the current location object
+
+  // Helper function to determine if a hash link is active
+  const isHashNavLinkActive = (hashLink) => {
+    // hashLink will be like "#home", "#about_us", etc.
+    return location.hash === hashLink;
+  };
+
   return (
     <>
       <section id="header">
-        <a className="cta-banner">
+        <Link to="/#workshops" className="cta-banner">
           <header>
             <p>Master the Art of Gift Packing—Sign Up for Our Next Workshop!</p>
           </header>
-        </a>
+        </Link>
         <header className="navbar">
           <div className="logo">
-            <a>
+            <Link to="/">
               <img src="craftyydrafty_logo.png" />
               <span>CraftyyDrafty</span>
-            </a>
+            </Link>
           </div>
           <nav className="front-nav">
             <ul className="nav-links">
               <li>
-                <a href="#">Home</a>
+                <NavLink
+                  to="/#workshops"
+                  className={() =>
+                    isHashNavLinkActive("#workshops")
+                      ? "link-active"
+                      : "link-inactive"
+                  }
+                >
+                  Workshops
+                </NavLink>
               </li>
               <li>
-                <a href="#">About Us</a>
+                <NavLink
+                  to="/#services"
+                  className={() =>
+                    isHashNavLinkActive("#services")
+                      ? "link-active"
+                      : "link-inactive"
+                  }
+                >
+                  Packing Services
+                </NavLink>
               </li>
               <li>
-                <a href="#">Workshops</a>
+                <NavLink
+                  to="/#video-testimonials"
+                  className={() =>
+                    isHashNavLinkActive("#video-testimonials")
+                      ? "link-active"
+                      : "link-inactive"
+                  }
+                >
+                  Testimonials
+                </NavLink>
               </li>
               <li>
-                <a href="#">Packing Services</a>
+                <NavLink
+                  to="/about-us"
+                  className={(e) =>
+                    e.isActive ? "link-active" : "link-inactive"
+                  }
+                >
+                  About Us
+                </NavLink>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <Link to="/#contact-info">Contact</Link>
               </li>
             </ul>
           </nav>
           <div className="hamburger">
             <svg
-              onClick={() => toggleSidebar()}
+              onClick={toggleSidebar}
               viewBox="0 -0.5 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -66,12 +123,19 @@ function Header() {
           </div>
         </header>
       </section>
-      <nav id="side-nav">
+
+      {isSideNavOpen ? (
+        <div className="sidebar-overlay" onClick={toggleSidebar} />
+      ) : (
+        ""
+      )}
+
+      <nav id="side-nav" className={isSideNavOpen ? "side-nav-open" : ""}>
         <ul className="sidebar">
           <li>
             <svg
               className="close-slidebar-icon"
-              onClick={() => toggleSidebar()}
+              onClick={toggleSidebar}
               viewBox="5 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -92,19 +156,29 @@ function Header() {
             </svg>
           </li>
           <li>
-            <a href="#">Home</a>
+            <Link to="/#workshops" onClick={toggleSidebar}>
+              Workshops
+            </Link>
           </li>
           <li>
-            <a href="#">About Us</a>
+            <Link to="/#services" onClick={toggleSidebar}>
+              Packing Services
+            </Link>
           </li>
           <li>
-            <a href="#">Workshops</a>
+            <Link to="/#video-testimonials" onClick={toggleSidebar}>
+              Testimonials
+            </Link>
           </li>
           <li>
-            <a href="#">Packing Services</a>
+            <Link to="/about-us" onClick={toggleSidebar}>
+              About Us
+            </Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to="/#contact-info" onClick={toggleSidebar}>
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>

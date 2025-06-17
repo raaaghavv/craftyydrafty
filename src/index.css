@@ -12,7 +12,7 @@
   --orange-80: #ffbe99;
   --orange-90: #ffdecc;
   --orange-95: #ffefe5;
-  --orange-97: #fffcfa;
+  --orange-97: #fff5f0;
   --orange-99: #fffcfa;
 
   --grey-10: #191919;
@@ -24,24 +24,20 @@
   --grey-60: #98989a;
   --grey-70: #b3b3b3;
 
-  --content-font: "Outfit", Arial, sans-serif;
   --heading-font: "Raleway", Arial, sans-serif;
+  --content-font: "Outfit", Arial, sans-serif;
   --signature-font: "Dancing Script", Arial, sans-serif;
-
-  font-family: var(--content-font);
-  /* line-height: 1.5;
-  font-weight: 400; */
-
-  /* color-scheme: light dark; */
-  background-color: var(--orange-97);
-  color: var(--grey-10);
 }
+
 body,
 html {
   margin: 0;
   /* margin-inline: 1px; */
   padding: 0px;
   overflow-x: hidden;
+  font-family: var(--content-font);
+  background-color: var(--orange-97);
+  color: var(--grey-10);
 }
 body {
   display: flex;
@@ -53,11 +49,25 @@ body {
   text-align: center;
   margin-top: 150px;
 }
-
 .section-heading h2 {
+  font-family: var(--heading-font);
   font-size: 2.7rem;
   margin-bottom: 1.3%;
+  color: var(--grey-10);
 }
+.section-heading p {
+  color: var(--grey-20);
+}
+
+#about_us,
+#workshops,
+#services,
+#video-testimonials,
+#faq,
+#contact-info {
+  scroll-margin-top: 150px;
+}
+
 @media (width<768px) {
   .section-heading,
   #footer {

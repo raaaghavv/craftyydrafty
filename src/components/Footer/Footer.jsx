@@ -1,15 +1,16 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./Footer.css";
-function Footer() {
-  const textmsg = "hello!";
+import { Link } from "react-router-dom";
+
+const Footer = forwardRef((props, ref) => {
   return (
     <>
-      <footer id="footer" className="footer">
+      <footer ref={ref} id={props.id} className="footer">
         <div class="footer-content">
           <div class="footer-content-grid">
             <section class="company-info" aria-labelledby="company-heading">
               <div class="company-branding">
-                <a href="#" class="company-logo-link" aria-label="Home page">
+                <Link to="/" class="company-logo-link" aria-label="Home page">
                   <img
                     class="company-logo"
                     src="./craftyydrafty_logo.png"
@@ -19,7 +20,7 @@ function Footer() {
                     loading="lazy"
                   />
                   <h2 class="company-name">CraftyyDrafty</h2>
-                </a>
+                </Link>
               </div>
 
               <address class="contact-info" aria-labelledby="contact-heading">
@@ -28,7 +29,10 @@ function Footer() {
                 </h3>
                 <ul class="contact-list">
                   <li>
-                    <a href="mailto:info@company.com" class="email-contact">
+                    <Link
+                      to="mailto:craftyydrafty.help@gmail.com"
+                      class="email-contact"
+                    >
                       <svg
                         width="20"
                         height="15"
@@ -45,12 +49,14 @@ function Footer() {
                           fill="#000000"
                         />
                       </svg>
-                      <span class="contact-text">info@gmail.com</span>
-                    </a>
+                      <span class="contact-text">
+                        craftyydrafty.help@gmail.com
+                      </span>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href={`https://wa.me/+918920799458?text=${textmsg}`}
+                    <Link
+                      to={`https://wa.me/+918920799458`}
                       class="whatsapp-contact"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -112,11 +118,11 @@ function Footer() {
                         </g>
                       </svg>
                       <span class="contact-text">WhatsApp</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="https://www.instagram.com/craftyydrafty?igsh=MzBqeTJvcmhpMGdx"
+                    <Link
+                      to="https://www.instagram.com/craftyydrafty?igsh=MzBqeTJvcmhpMGdx"
                       class="social-link"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -176,7 +182,7 @@ function Footer() {
                         </g>
                       </svg>
                       <span class="contact-text">Instagram</span>
-                    </a>
+                    </Link>
                   </li>
                   <li class="physical-address">
                     <svg
@@ -209,19 +215,14 @@ function Footer() {
               </h2>
               <ul class="nav-list">
                 <li class="nav-item">
-                  <a href="/service1" class="nav-link">
-                    Service One
-                  </a>
+                  <Link to="/#workshops" class="nav-link">
+                    Online Workshops
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a href="/service2" class="nav-link">
-                    Service Two
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/service3" class="nav-link">
-                    Service Three
-                  </a>
+                  <Link to="/#services" class="nav-link">
+                    Packing Services
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -232,19 +233,19 @@ function Footer() {
               </h2>
               <ul class="nav-list">
                 <li class="nav-item">
-                  <a href="/blog" class="nav-link">
-                    Blog
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/faq" class="nav-link">
+                  <Link to="/#faq" class="nav-link">
                     FAQs
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a href="/support" class="nav-link">
-                    Support
-                  </a>
+                  <Link to="/about-us" class="nav-link">
+                    About us
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link to="/#video-testimonials" class="nav-link">
+                    Testimonials
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -262,6 +263,6 @@ function Footer() {
       </div>
     </>
   );
-}
+});
 
 export default Footer;

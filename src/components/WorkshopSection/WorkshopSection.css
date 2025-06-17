@@ -1,5 +1,5 @@
 .workshop-filter-nav {
-  height: 8vh;
+  height: 60px;
   width: fit-content;
   margin-top: 25px;
   margin-inline: auto;
@@ -12,34 +12,61 @@
   list-style: none;
   padding: 0%;
   margin: 0%;
-  border: 2px solid;
+  border: 2px solid var(--grey-15);
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .workshop-filter-nav li {
+  background-color: var(--absolute-white);
   height: 100%;
   margin: 0%;
   padding: 0%;
+  overflow: hidden;
 }
-
 .workshop-filter-nav li:not(:last-child) {
-  border-right: 2px solid rgb(230, 223, 223);
+  border-right: 2px solid var(--grey-15);
 }
-
-.workshop-filter-nav a {
+.workshop-filter-nav button {
+  background: none;
+  background-color: transparent; /* Redundant but good for clarity/fallback */
+  /* Removes default borders */
+  border: none;
+  /* Removes default padding */
+  padding: 0;
+  /* Removes default margin (though buttons often don't have much by default) */
+  margin: 0;
+  /* Inherits font styles from parent, preventing browser-specific font changes */
+  font: inherit;
+  color: inherit; /* Inherit text color */
+  /* Resets default text alignment */
+  text-align: inherit;
+  /* Removes default text decorations, like underlines for some button types */
+  text-decoration: none;
+  /* Ensures cursor changes to a pointer when hovering over the button */
+  cursor: pointer;
+  /* Resets browser-specific default button styles (e.g., on macOS) */
+  -webkit-appearance: none; /* For WebKit browsers (Chrome, Safari) */
+  -moz-appearance: none; /* For Mozilla browsers (Firefox) */
+  appearance: none; /* Standard property */
+  /* Removes outline on focus, but consider adding a custom focus style for accessibility */
+  outline: none;
+}
+.workshop-filter-nav button {
   display: flex;
   align-items: center;
   text-align: center;
-  text-decoration: none;
   height: 100%;
-  color: rgb(230, 223, 223);
+  color: var(--grey-15);
   padding-inline: 1vmax;
   margin: 0%;
   /* font-size: 1rem; */
 }
-
+.workshop-filter-nav button.active {
+  background-color: var(--orange-80);
+}
 .slider-container {
   display: flex;
   margin-inline: 10vw;
@@ -58,7 +85,7 @@
   scroll-behavior: smooth;
   /* padding-left: 2rem; */
   /* padding: 0%; */
-  padding: 6px ;
+  padding: 6px;
 }
 
 .card-item {
@@ -68,7 +95,7 @@
 
 .card-link {
   text-decoration: none;
-  color: rgb(230, 223, 223);
+  /* color: rgb(230, 223, 223); */
   display: inline-block;
 }
 
@@ -77,10 +104,12 @@
   width: clamp(200px, 70vw, 300px); /* or whatever responsive range you want */
   min-width: 200px; /* ensure it never goes below this */
   max-width: 300px; /* optional cap */
-  border: 2px solid rgb(230, 223, 223);
+  border: 2px solid var(--grey-15);
   border-radius: 10px;
+  background-color: var(--absolute-white);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+  box-shadow: 4px 4px var(--grey-15);
   /* min-width: 250px; */
 }
 
@@ -102,8 +131,21 @@
   max-width: 95%;
   margin-inline: auto;
 }
-
-.card .learn-more {
+.workshop-title {
+  font-size: 1.2rem;
+  color: var(--grey-15);
+  font-weight: 600;
+}
+.workshop-description {
+  color: var(--grey-30);
+  font-weight: 350;
+}
+.workshop-price {
+  font-size: 1.05rem;
+  color: var(--grey-15);
+  font-weight: 470;
+}
+.card .learn-more a{
   display: block;
   text-align: center;
   margin-inline: auto;
@@ -111,17 +153,21 @@
   text-decoration: none;
   padding: 2%;
   width: 90%;
-  border: 2px solid rgb(230, 223, 223);
+  border: 2px solid var(--grey-15);
   border-radius: 10px;
-  color: rgb(230, 223, 223);
-  font-weight: bold;
+  background-color: var(--orange-90);
+  color: var(--grey-20);
+  font-weight: 500;
 }
 
 .prev-btn,
 .next-btn {
   margin: auto;
   margin-inline: 5px;
-  height: 5vh;
+  height: 45px;
+  aspect-ratio: 1/1;
+  border-radius: 15%;
+  font-size: 1rem;
 }
 /* Hide scrollbar but keep scrolling functional */
 .slider-wrapper::-webkit-scrollbar {
@@ -162,13 +208,13 @@
   }
 }
 
-
 .slider-indicator {
   width: 10vmax;
   max-width: 100px;
   height: 6px;
-  background-color: #555;
-  border-radius: 3px;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid var(--grey-15);
+  border-radius: 5px;
   margin-top: 30px;
   position: relative;
   overflow: hidden;
@@ -178,10 +224,10 @@
 .slider-pill {
   height: 100%;
   width: 20%;
-  background-color: #e0e0e0;
-  border-radius: 3px;
+  background-color: var(--grey-30);
+  border-radius: 2px;
   position: absolute;
   left: 0;
   transition: left 0.3s ease;
-  transform: translateX(0); 
+  transform: translateX(0);
 }

@@ -1,68 +1,76 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import { Link } from "react-router-dom";
 import "./OurServices.css";
 
 const services = [
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about your Wedding Packing.",
     heading: "Wedding Packing",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/653621422f4db3fb4cbee1db_Product%201.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about your Balloon Packing.",
     heading: "Balloon Packing",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/65362141715959ce3ab73003_Product%205.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
-    heading: "Feuroshiki Wrapping",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about your Furoshiki Packing.",
+    heading: "Furoshiki Wrapping",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/65362141aa6fb79a927d6298_Product%206.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about your Theme Packing.",
     heading: "Theme Packing",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/65362141791863e60e38b316_Product%207.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about your Paper Packing.",
     heading: "Paper Wrapping",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/65362141791863e60e38b316_Product%207.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about Paper Bouquet.",
     heading: "Paper Bouquet",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/65362141aa6fb79a927d6298_Product%206.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about Bows n Bunches.",
     heading: "Bows n Bunches",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/65362141715959ce3ab73003_Product%205.webp",
     description: "Experience the Love in Gifting.",
   },
   {
-    serviceLink: "#",
+    serviceLink:
+      "https://wa.me/+918920799458?text=Hi! I want to know more about Custom Gifting.",
     heading: "Custom Gifting",
     imgSRC:
       "https://assets-global.website-files.com/6536201826a56456fff7c8ed/653621422f4db3fb4cbee1db_Product%201.webp",
     description: "Experience the Love in Gifting.",
   },
 ];
-
-function OurServices() {
+const OurServices = forwardRef((props, ref) => {
   return (
-    <section className="OurServices-section">
+    <section ref={ref} id={props.id} className="OurServices-section">
       <div className="section-heading">
         <h2>
           Beautifully Wrapped,
@@ -82,7 +90,11 @@ function OurServices() {
               className="service-overlay"
               style={{ backgroundImage: `url(${service.imgSRC})` }}
             ></div>
-            <a href={service.serviceLink} className="service-link">
+            <Link
+              to={service.serviceLink}
+              target="_blank"
+              className="service-link"
+            >
               <div className="top-info">
                 <h3>{service.heading}</h3>
                 <img
@@ -92,12 +104,12 @@ function OurServices() {
                 />
               </div>
               <p>{service.description}</p>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
     </section>
   );
-}
+});
 
 export default OurServices;

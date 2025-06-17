@@ -4,7 +4,7 @@
   width: 100%;
   z-index: 997;
   background-color: var(--orange-97);
-  padding-top: 1vh;
+  padding-top: 7.5px;
 }
 .cta-banner {
   background-color: var(--orange-90);
@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 8vh;
+  height: 62px;
   margin-inline: 10px;
   overflow: hidden;
 }
@@ -88,9 +88,9 @@
   padding-inline: 1vw;
   font-size: 1rem;
 }
-.nav-links li:first-child {
+/* .nav-links li:first-child {
   background-color: var(--orange-95);
-}
+} */
 .nav-links li:last-child {
   background-color: var(--orange-75);
 }
@@ -111,6 +111,9 @@
   transform: translateX(0);
 }
 .sidebar {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -128,6 +131,12 @@
 .close-slidebar-icon {
   height: 3rem;
 }
+.link-active {
+  background-color: var(--orange-95);
+}
+.link-inactive {
+  background-color: var(--absolute-white);
+}
 
 @media (width<768px) {
   .front-nav {
@@ -138,11 +147,11 @@
     align-items: center;
   }
   html.prevent-scroll,
-  body.sidebar-active {
+  .sidebar-overlay {
     overflow: hidden;
   }
-  body.sidebar-active::before {
-    content: "";
+
+  .sidebar-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -156,8 +165,8 @@
     visibility: hidden; /* Start hidden to prevent interactions */
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   }
-  /* When the sidebar is active, make the overlay visible */
-  body.sidebar-active::before {
+
+  .sidebar-overlay {
     opacity: 1;
     visibility: visible;
   }

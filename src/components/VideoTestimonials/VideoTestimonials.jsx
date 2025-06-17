@@ -1,9 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
+
 import "../../../node_modules/video.js/dist/video-js.css";
 import "./VideoTestimonials.css";
 import VideoJS from "../Video";
 
-function VideoTestimonials() {
+const VideoTestimonials = forwardRef((props, ref) => {
   const playerRef = React.useRef(null);
 
   const videos = [
@@ -63,7 +64,7 @@ function VideoTestimonials() {
     });
   };
   return (
-    <section className="Video-Testimonials">
+    <section ref={ref} id={props.id} className="Video-Testimonials">
       <div className="section-heading">
         <h2>Real Stories, Real Impact</h2>
         <p>
@@ -90,6 +91,6 @@ function VideoTestimonials() {
       </div>
     </section>
   );
-}
+});
 
 export default VideoTestimonials;
