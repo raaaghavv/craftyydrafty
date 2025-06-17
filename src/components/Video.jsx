@@ -124,11 +124,6 @@ export const VideoJS = (props) => {
           </svg>
         )}
       </button>
-
-      <button className="custom-fullscreen-button" onClick={toggleFullscreen}>
-        {isFullscreen ? "⤢" : "⤢"}{" "}
-        {/* You could use different symbols or SVGs here too */}
-      </button>
     </div>
   );
 };

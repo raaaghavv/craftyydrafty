@@ -134,7 +134,7 @@ a {
 }
 
 @media (width>1025px) {
-  #contact-info {
+  .footer {
     margin-top: 150px;
   }
 }

@@ -3,7 +3,7 @@
   width: fit-content;
   margin-top: 25px;
   margin-inline: auto;
-  padding-inline: 35px;
+  padding-inline: 20px;
 }
 
 .workshop-filter-nav ul {
@@ -24,7 +24,6 @@
   height: 100%;
   margin: 0%;
   padding: 0%;
-  overflow: hidden;
 }
 .workshop-filter-nav li:not(:last-child) {
   border-right: 2px solid var(--grey-15);
@@ -60,7 +59,7 @@
   text-align: center;
   height: 100%;
   color: var(--grey-15);
-  padding-inline: 1vmax;
+  padding-inline: 8px;
   margin: 0%;
   /* font-size: 1rem; */
 }
@@ -160,15 +159,45 @@
   font-weight: 500;
 }
 
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
 .prev-btn,
 .next-btn {
   margin: auto;
   margin-inline: 5px;
-  height: 45px;
+  height: 35px;
   aspect-ratio: 1/1;
-  border-radius: 15%;
-  font-size: 1rem;
+  border: none;
+  background-color: transparent;
 }
+.slider-indicator {
+  width: 10vmax;
+  max-width: 100px;
+  height: 6px;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid var(--grey-15);
+  border-radius: 5px;
+  /* margin-top: 30px; */
+  position: relative;
+  overflow: hidden;
+  margin-inline: 5px;
+}
+
+.slider-pill {
+  height: 100%;
+  width: 20%;
+  background-color: var(--grey-30);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: left 0.3s ease;
+  transform: translateX(0);
+}
+
 /* Hide scrollbar but keep scrolling functional */
 .slider-wrapper::-webkit-scrollbar {
   height: 6px; /* Adjust height of scrollbar */
@@ -206,28 +235,4 @@
   .card {
     flex: 0 0 clamp(250px, 300px, 350px);
   }
-}
-
-.slider-indicator {
-  width: 10vmax;
-  max-width: 100px;
-  height: 6px;
-  background-color: rgb(240, 240, 240);
-  border: 2px solid var(--grey-15);
-  border-radius: 5px;
-  margin-top: 30px;
-  position: relative;
-  overflow: hidden;
-  margin-inline: auto;
-}
-
-.slider-pill {
-  height: 100%;
-  width: 20%;
-  background-color: var(--grey-30);
-  border-radius: 2px;
-  position: absolute;
-  left: 0;
-  transition: left 0.3s ease;
-  transform: translateX(0);
 }
