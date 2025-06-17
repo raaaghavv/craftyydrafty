@@ -26,7 +26,7 @@ export const VideoJS = (props) => {
         }
       ));
 
-      // Player event listeners
+      // Player event listeners - these are the ONLY places that should update isPlaying state
       player.on("play", () => setIsPlaying(true));
       player.on("pause", () => setIsPlaying(false));
       player.on("fullscreenchange", () => {
@@ -42,13 +42,16 @@ export const VideoJS = (props) => {
     };
   }, [options, videoRef]);
 
-  const togglePlay = (e) => {
+  // Simplified togglePlay function - it only tells the player to play/pause
+  const togglePlay = () => {
     if (playerRef.current) {
-      isPlaying
-        ? (e.target.classList.remove("custom-play-button-playing"),
-          playerRef.current.pause())
-        : (e.target.classList.add("custom-play-button-playing"),
-          playerRef.current.play());
+      if (isPlaying) {
+        playerRef.current.pause();
+      } else {
+        playerRef.current.play();
+      }
+      // The player.on('play') and player.on('pause') listeners will then update
+      // the `isPlaying` state correctly, which in turn re-renders the UI.
     }
   };
 
@@ -67,7 +70,13 @@ export const VideoJS = (props) => {
       </div>
 
       {/* Custom Controls */}
-      <button className="custom-play-button" onClick={(e) => togglePlay(e)}>
+      <button
+        // Apply the class conditionally based on the `isPlaying` state
+        className={`custom-play-button ${
+          isPlaying ? "custom-play-button-playing" : ""
+        }`}
+        onClick={togglePlay} // No need to pass 'e' here now
+      >
         {isPlaying ? (
           <svg
             className="pause-button"
@@ -117,9 +126,11 @@ export const VideoJS = (props) => {
       </button>
 
       <button className="custom-fullscreen-button" onClick={toggleFullscreen}>
-        {isFullscreen ? "⤢" : "⤢"}
+        {isFullscreen ? "⤢" : "⤢"}{" "}
+        {/* You could use different symbols or SVGs here too */}
       </button>
     </div>
   );
 };
+
 export default VideoJS;

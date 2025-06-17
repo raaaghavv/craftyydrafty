@@ -56,11 +56,11 @@ const VideoTestimonials = forwardRef((props, ref) => {
     playerRef.current = player;
     // You can handle player events here, for example:
     player.on("waiting", () => {
-      videojs.log("player is waiting");
+      player.log("player is waiting");
     });
 
     player.on("dispose", () => {
-      videojs.log("player will dispose");
+      player.log("player will dispose");
     });
   };
   return (
