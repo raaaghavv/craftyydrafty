@@ -61,7 +61,7 @@
   color: var(--grey-15);
   padding-inline: 8px;
   margin: 0%;
-  /* font-size: 1rem; */
+  font-weight: 460;
 }
 .workshop-filter-nav button.active {
   background-color: var(--orange-80);
@@ -70,7 +70,6 @@
   display: flex;
   margin-inline: 10vw;
   margin-top: 30px;
-  /* width: 83vw; */
   overflow-x: hidden;
 }
 
@@ -82,24 +81,25 @@
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  /* padding-left: 2rem; */
-  /* padding: 0%; */
-  padding: 6px;
+  padding: 6px 6px 15px;
 }
 
 .card-item {
-  /* flex: 0 0 calc((100% / 3) - 1rem); Each card takes 1/3rd of the container */
-  /* max-width: calc((100% / 3)); Prevents overflow */
+  height: 100%;
 }
 
 .card-link {
   text-decoration: none;
-  /* color: rgb(230, 223, 223); */
   display: inline-block;
+  height: 100%;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 0 0 auto;
+  height: 100%;
   width: clamp(200px, 70vw, 300px); /* or whatever responsive range you want */
   min-width: 200px; /* ensure it never goes below this */
   max-width: 300px; /* optional cap */
@@ -107,9 +107,9 @@
   border-radius: 10px;
   background-color: var(--absolute-white);
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+  transition: transform 0.3s ease-out;
   box-shadow: 4px 4px var(--grey-15);
-  /* min-width: 250px; */
 }
 
 .card:hover {
@@ -137,9 +137,9 @@
 }
 .workshop-description {
   color: var(--grey-30);
-  font-weight: 350;
+  font-weight: 380;
 }
-.workshop-price {
+.workshop-recording {
   font-size: 1.05rem;
   color: var(--grey-15);
   font-weight: 470;
@@ -156,7 +156,7 @@
   border-radius: 10px;
   background-color: var(--orange-90);
   color: var(--grey-20);
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .slider-controls {
@@ -225,6 +225,12 @@
   display: none; /* Chrome, Safari */
 }
 
+.no-workshop-found {
+  display:block;
+  margin-inline:auto;
+  width:100%;
+  font-size:1.2rem;
+}
 @media (hover: none) {
   .prev-btn,
   .next-btn {
