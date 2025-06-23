@@ -5,7 +5,7 @@
   text-align: center;
   margin-top: 60px;
   margin-inline: auto;
-  width: clamp(270px,60vw,500px);
+  width: clamp(270px, 60vw, 500px);
   background-color: var(--orange-95);
   border: 2px solid var(--grey-15);
   box-shadow: 5px 5px var(--orange-80);
@@ -38,11 +38,10 @@
 }
 @media (width >= 768px) {
   .metrics-grid {
-    margin-inline: 15vw;
+    margin-inline: auto;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
-    width: auto;
-    max-width: 1100px;
+    width: clamp(600px, 70vw, 1100px);
   }
   .metric-item {
     padding: 1rem 1.2rem;
