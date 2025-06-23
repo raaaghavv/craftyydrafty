@@ -5,6 +5,29 @@ import "./Header.css";
 function Header() {
   const [isSideNavOpen, set_isSideNavOpen] = useState(false);
 
+  const location = useLocation();
+
+  const isHashNavLinkActive = (hashLink) => {
+    return location.hash === hashLink;
+  };
+
+  function toggleSidebar() {
+    set_isSideNavOpen(!isSideNavOpen);
+  }
+
+  const footerSectionId = "#contact-info";
+
+  const getContactLinkTo = () => {
+    if (location.pathname === "/") {
+      return footerSectionId;
+    } else {
+      return {
+        pathname: location.pathname,
+        hash: footerSectionId,
+      };
+    }
+  };
+
   useEffect(() => {
     if (isSideNavOpen) {
       document.documentElement.classList.add("prevent-scroll");
@@ -16,26 +39,15 @@ function Header() {
     };
   }, [isSideNavOpen]);
 
-  function toggleSidebar() {
-    set_isSideNavOpen(!isSideNavOpen);
-  }
-
-  document.getElementById;
-
-  const location = useLocation(); // Get the current location object
-
-  // Helper function to determine if a hash link is active
-  const isHashNavLinkActive = (hashLink) => {
-    // hashLink will be like "#home", "#about_us", etc.
-    return location.hash === hashLink;
-  };
-
   return (
     <>
       <section id="header">
         <Link to="/#workshops" className="cta-banner">
           <header>
-            <p>Master the Art of Gift Packing—Sign Up for Our Next Workshop!</p>
+            <p>
+              Master the Art of Gift Packing—Learn and Earn with Our Digital
+              Workshops Now!
+            </p>
           </header>
         </Link>
         <header className="navbar">
@@ -94,7 +106,7 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <Link to="/#contact-info">Contact</Link>
+                <Link to={getContactLinkTo()}>Contact</Link>
               </li>
             </ul>
           </nav>
@@ -176,7 +188,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/#contact-info" onClick={toggleSidebar}>
+            <Link to={getContactLinkTo()} onClick={toggleSidebar}>
               Contact
             </Link>
           </li>
