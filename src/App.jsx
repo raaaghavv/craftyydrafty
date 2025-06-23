@@ -1,9 +1,6 @@
-import React, { useEffect, useRef } from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useLocation,
-} from "react-router-dom";
+import React, { useRef } from "react";
+import PageScrollHandler from "./components/PageScrollHandler";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import HeroSection from "./components/HeroSection/HeroSection";
@@ -16,11 +13,9 @@ import KeyMetrics from "./components/KeyMetrics/KeyMetrics";
 import FAQsection from "./components/FAQsection/FAQsection";
 import Footer from "./components/Footer/Footer";
 import AboutUs from "./components/AboutUs/AboutUs";
+import NotFoundPage from "./components/NotFoundPage";
 
-// This component will render your entire landing page content
 const LandingPageContent = () => {
-  const location = useLocation(); // Hook to get current URL information
-
   // Create refs for each section you want to scroll to
   const workshopRef = useRef(null);
   const servicesRef = useRef(null);
@@ -28,29 +23,9 @@ const LandingPageContent = () => {
   const faqRef = useRef(null);
   const contactRef = useRef(null);
 
-  useEffect(() => {
-    const scrollToSection = (id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        // Use setTimeout to ensure the DOM has updated before scrolling
-        // This can help if content is still rendering asynchronously
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 50);
-      }
-    };
-
-    // Check if there's a hash in the URL (e.g., #about, #services)
-    if (location.hash) {
-      scrollToSection(location.hash.substring(1)); // Remove the '#' from the hash
-    } else {
-      // Optional: Scroll to the top of the page if no hash is present
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [location]);
-
   return (
     <>
+      <PageScrollHandler />
       <Header />
       <HeroSection />
       <OurBenefits />
@@ -65,6 +40,19 @@ const LandingPageContent = () => {
   );
 };
 
+const AboutUsContent = () => {
+  const contactRef = useRef(null);
+  return (
+    <>
+      <PageScrollHandler />
+      <Header />
+      <AboutUs />
+      <KeyMetrics />
+      <Footer ref={contactRef} id="contact-info" />
+    </>
+  );
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -72,18 +60,16 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Header />,
-    error: "404 not found!",
-  },
-  {
-    path: "/about-us",
     element: (
       <>
         <Header />
-        <AboutUs />
-        <Footer/>
+        <NotFoundPage />
       </>
     ),
+  },
+  {
+    path: "/about-us",
+    element: <AboutUsContent />,
   },
 ]);
 
