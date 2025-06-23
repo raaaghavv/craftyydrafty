@@ -18,12 +18,15 @@
   gap: clamp(1.2rem, 5vw, 4.8rem);
   padding-left: clamp(1.2rem, 5vw, 4.8rem);
   width: max-content;
-  animation: marquee 15s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 .marquee-slider:hover {
   animation-play-state: paused;
 }
 .testimonial-card {
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
   border: 2px solid var(--grey-15);
   border-radius: 8px;
   width: 23vmax;
@@ -61,14 +64,14 @@
   border: 1px solid var(--grey-10);
   background-color: var(--orange-97);
   color: var(--grey-20);
-  border-radius: 100%;
+  border-radius: 50%;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-block: auto;
   width: 2rem;
   height: auto;
   font-size: 1.5rem;
   padding: 0.5%;
+  padding-right:1.1%;
 }
 .author-info span {
   display: block;
