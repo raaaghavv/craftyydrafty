@@ -49,6 +49,19 @@ body {
   text-align: center;
   margin-top: 150px;
 }
+.section-short-name {
+  border: 2px solid var(--grey-15);
+  border-radius: 6px;
+  padding: 5px 8px;
+  background-color: var(--absolute-white);
+  width: max-content;
+  margin-inline: auto;
+  font-weight: 480;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:2px;
+}
 .section-heading h2 {
   font-family: var(--heading-font);
   font-size: 2.7rem;
@@ -56,10 +69,11 @@ body {
   color: var(--grey-10);
 }
 .section-heading p {
+  font-size: 1.1rem;
   color: var(--grey-20);
+  font-weight: 410;
 }
 
-#about_us,
 #workshops,
 #services,
 #video-testimonials,
@@ -70,13 +84,15 @@ body {
 
 @media (width<768px) {
   .section-heading,
-  .footer {
+  .footer,
+  .about-us-image-container {
     margin-top: 80px;
   }
 }
 @media (width>=768px) and (width<=1025px) {
   .section-heading,
-  .footer {
+  .footer,
+  .about-us-image-container {
     margin-top: 110px;
   }
 }
