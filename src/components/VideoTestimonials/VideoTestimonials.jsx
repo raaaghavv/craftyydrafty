@@ -5,13 +5,13 @@ import "./VideoTestimonials.css";
 import VideoJS from "../Video";
 
 const VideoTestimonials = forwardRef((props, ref) => {
-  const playerRef = React.useRef(null);
+  const allPlayersRef = React.useRef(new Map());
 
   const videos = [
     {
       sources: [
         {
-          src: "/100607-video-720.mp4",
+          src: "/testimonial-1.mp4",
           type: "video/mp4",
         },
       ],
@@ -19,13 +19,13 @@ const VideoTestimonials = forwardRef((props, ref) => {
       responsive: true,
       fluid: true,
       aspectRatio: "9:16",
-      name: "john",
-      state: "punjab",
+      name: "Tanzilaftab",
+      state: "Gujrat",
     },
     {
       sources: [
         {
-          src: "/100607-video-720.mp4",
+          src: "/testimonial-2.mp4",
           type: "video/mp4",
         },
       ],
@@ -33,13 +33,13 @@ const VideoTestimonials = forwardRef((props, ref) => {
       responsive: true,
       fluid: true,
       aspectRatio: "9:16",
-      name: "john",
-      state: "punjab",
+      name: "Ruchika",
+      state: "Delhi",
     },
     {
       sources: [
         {
-          src: "/100607-video-720.mp4",
+          src: "/testimonial-3.mp4",
           type: "video/mp4",
         },
       ],
@@ -47,22 +47,47 @@ const VideoTestimonials = forwardRef((props, ref) => {
       responsive: true,
       fluid: true,
       aspectRatio: "9:16",
-      name: "john",
-      state: "punjab",
+      name: "Dolly",
+      state: "Uttar Pradesh",
     },
   ];
 
-  const handlePlayerReady = (player) => {
-    playerRef.current = player;
-    // You can handle player events here, for example:
-    player.on("waiting", () => {
-      player.log("player is waiting");
+  const handlePlayerReady = (player, index) => {
+    // Store the player instance in our map, using its index as the key
+    allPlayersRef.current.set(index, player);
+
+    // Attach a 'play' event listener to this specific player
+    player.on("play", () => {
+      // When this player starts playing, iterate through all other players
+      allPlayersRef.current.forEach((otherPlayer, otherIndex) => {
+        // If it's a different player and it's currently playing, pause it
+        if (otherPlayer !== player && !otherPlayer.paused()) {
+          otherPlayer.pause();
+        }
+      });
     });
 
+    // Attach a 'dispose' event listener to clean up the map when a player is removed
     player.on("dispose", () => {
-      player.log("player will dispose");
+      allPlayersRef.current.delete(index);
+      player.log("player disposed from map"); // Use player.log here!
     });
+
+    // player.log("player is ready at index: ", index); // Use player.log here!
   };
+
+  // Optional: Cleanup all players when VideoTestimonials component unmounts
+  React.useEffect(() => {
+    return () => {
+      allPlayersRef.current.forEach((player) => {
+        if (player && !player.isDisposed()) {
+          player.dispose();
+        }
+      });
+      allPlayersRef.current.clear();
+    };
+  }, []);
+
   return (
     <section ref={ref} id={props.id} className="Video-Testimonials">
       <div className="section-heading">
@@ -79,7 +104,8 @@ const VideoTestimonials = forwardRef((props, ref) => {
           <div className="video-card" key={index}>
             <VideoJS
               options={videoJsOptions}
-              onReady={handlePlayerReady}
+              // Pass the index to the handlePlayerReady function
+              onReady={(player) => handlePlayerReady(player, index)}
               className="video-js"
             />
             <div className="customer-info">
