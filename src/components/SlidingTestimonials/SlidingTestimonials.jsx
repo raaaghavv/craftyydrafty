@@ -3,54 +3,88 @@ import "./SlidingTestimonials.css";
 function SlidingTestimonials() {
   const testimonials = [
     {
-      quote: `"Crafty Drafty transformed how we present our products. Their packaging designs elevated our brand perception."`,
-      rating: "4",
-      authorName: "raghav goel",
-      authorState: "Amritsar",
-      ariaHidden: false,
-    },
-    {
       quote:
-        "Crafty Drafty transformed how we present our products. Their packaging designs elevated our brand perception.",
+        "Hii This is Tanzilaftab From Rose wraps, It was a wonderful experience to learn with Crafty Drafty. Every small tips and tricks are solved in the class. It is my personal experience to become the owner of rose wraps from a house wife❤. Fees is also very reasonable, So if u r confused for fees so don't hesitate, Go for it!",
       rating: "5",
-      authorName: "Sarah Johnson",
-      authorState: "Amritsar",
+      authorName: "Tanzilaftab",
+      authorCity: "Vadodara",
       ariaHidden: false,
     },
     {
       quote:
-        "Crafty Drafty transformed how we present our products. Their packaging designs elevated our brand perception.",
+        "Thank you ma'am for such an amazing learning experience...your support and guidance really make our work easy ... gratitude 🙏🙏🙏🙏🙏",
       rating: "5",
-      authorName: "Sarah Johnson",
-      authorState: "Amritsar",
+      authorName: "Ruchika",
+      authorCity: "Delhi",
       ariaHidden: false,
     },
     {
       quote:
-        "Crafty Drafty transformed how we present our products. Their packaging designs elevated our brand perception.",
-      rating: "4",
-      authorName: "raghav goel",
-      authorState: "Amritsar",
+        "Hi, I just bought the recorded class from Monica ji of Bows and Flowers. I recieved the recording immediately with links of where i could purchase the materials used in the class. I went through a little of the recording and the class looks great. She teaches with a lot of patience i feel. I think i would love to attend her balloon hamper class too🙂",
+      rating: "5",
+      authorName: "Bina",
+      authorCity: "Chennai",
+      ariaHidden: false,
+    },
+    {
+      quote:
+        "🙏🙏🙏🌹🌹🌹 Thank you so much ma'am aapne bohot km fees may bohot kuch bataya. Me aapk work shop s bohot kuch sikha . Me y baloon hamper gift y online bohot dekha tha bohot jagah me inquiry kiya unki fees bohot thi. But aapk work shop fees bhi km thi an bohot kuch sikhane wale tye aap. Me joint kiya or me bohot kush hu ki muje kuch new sikhne ko aapse mila thank you so much ma'am 🙏🙏",
+      rating: "5",
+      authorName: "Priyanka",
+      authorCity: "Delhi",
+      ariaHidden: false,
+    },
+    {
+      quote:
+        "Thank you ma'am...the Balloon hamper workshop was really an amazing learning experience. Initially I was finding it a bit difficult but the way you taught us made our learning experience fascinating. Your support after workshop is tremendous and the way you guide us on our small small queries even after workshop makes you different and humble.",
+      rating: "5",
+      authorName: "Ruchika",
+      authorCity: "Delhi",
+      ariaHidden: false,
+    },
+
+    {
+      quote:
+        "Hii This is Tanzilaftab From Rose wraps, It was a wonderful experience to learn with Crafty Drafty. Every small tips and tricks are solved in the class. It is my personal experience to become the owner of rose wraps from a house wife❤. Fees is also very reasonable, So if u r confused for fees so don't hesitate, Go for it!",
+      rating: "5",
+      authorName: "Tanzilaftab",
+      authorCity: "Vadodara",
       ariaHidden: true,
     },
     {
       quote:
-        "Crafty Drafty transformed how we present our products. Their packaging designs elevated our brand perception.",
+        "Thank you ma'am for such an amazing learning experience...your support and guidance really make our work easy ... gratitude 🙏🙏🙏🙏🙏",
       rating: "5",
-      authorName: "Sarah Johnson",
-      authorState: "Amritsar",
+      authorName: "Ruchika",
+      authorCity: "Delhi",
       ariaHidden: true,
     },
     {
       quote:
-        "Crafty Drafty transformed how we present our products. Their packaging designs elevated our brand perception.",
+        "Hi, I just bought the recorded class from Monica ji of Bows and Flowers. I recieved the recording immediately with links of where i could purchase the materials used in the class. I went through a little of the recording and the class looks great. She teaches with a lot of patience i feel. I think i would love to attend her balloon hamper class too🙂",
       rating: "5",
-      authorName: "Sarah Johnson",
-      authorState: "Amritsar",
+      authorName: "Bina",
+      authorCity: "Chennai",
+      ariaHidden: true,
+    },
+    {
+      quote:
+        "🙏🙏🙏🌹🌹🌹 Thank you so much ma'am aapne bohot km fees may bohot kuch bataya. Me aapk work shop s bohot kuch sikha . Me y baloon hamper gift y online bohot dekha tha bohot jagah me inquiry kiya unki fees bohot thi. But aapk work shop fees bhi km thi an bohot kuch sikhane wale tye aap. Me joint kiya or me bohot kush hu ki muje kuch new sikhne ko aapse mila thank you so much ma'am 🙏🙏",
+      rating: "5",
+      authorName: "Priyanka",
+      authorCity: "Delhi",
+      ariaHidden: true,
+    },
+    {
+      quote:
+        "Thank you ma'am...the Balloon hamper workshop was really an amazing learning experience. Initially I was finding it a bit difficult but the way you taught us made our learning experience fascinating. Your support after workshop is tremendous and the way you guide us on our small small queries even after workshop makes you different and humble.",
+      rating: "5",
+      authorName: "Ruchika",
+      authorCity: "Delhi",
       ariaHidden: true,
     },
   ];
-  
+
   const getAuthorInitial = (testimonial) =>
     testimonial.authorName.charAt(0).toUpperCase();
 
@@ -187,9 +221,7 @@ function SlidingTestimonials() {
                 </span>
                 <div>
                   <span className="author-name">{testimonial.authorName}</span>
-                  <span className="author-state">
-                    {testimonial.authorState}
-                  </span>
+                  <span className="author-state">{testimonial.authorCity}</span>
                 </div>
               </cite>
             </blockquote>
