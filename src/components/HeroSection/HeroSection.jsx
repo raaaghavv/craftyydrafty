@@ -51,8 +51,8 @@ function HeroSection() {
         </div>
         <div className="image-container">
           <img
-            src="craftyydrafty_owner_pic-removebg-preview.png"
-            alt="CraftyyDrafty's Founder"
+            src="craftyydrafty_owner_pic.png"
+            alt="CraftyyDrafty's Founder photo"
           />
         </div>
       </section>
