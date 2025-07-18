@@ -6,7 +6,7 @@
   max-width: 2000px;
   border-radius: 8px;
   overflow: hidden;
-  /* gap:10px; */
+  gap:5px;
 }
 .service-card {
   position: relative;
